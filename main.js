@@ -27,9 +27,15 @@ if (es_sel == 2) {
     while (p_d.toLowerCase() != "pari" && p_d.toLowerCase() != "dispari") {
         p_d = prompt("scegli pari o dispari");
     }
-    const n_otf = prompt("scegli un numero da 1 a 5");
-    while (parseInt(n_otf) < 1 | parseInt(n_otf) > 5) {
+    let n_otf = prompt("scegli un numero da 1 a 5");
+
+    while (parseInt(n_otf) < 1 | parseInt(n_otf) > 5 | n_otf == "") {
         n_otf = prompt("scegli un numero da 1 a 5");
+
+        if (isNaN(n_otf) | n_otf == "") {
+
+            n_otf = 0;
+        }
     }
     function Random1to5() {
         let risultato = Math.floor(Math.random() * 5) + 1;
