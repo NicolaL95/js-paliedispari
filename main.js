@@ -16,9 +16,14 @@ if (es_sel == 1) {
 }
 
 if (es_sel == 2) {
-    const p_d = prompt("scegli pari o dispari")
+    let p_d = prompt("scegli pari o dispari")
+    while (p_d.toLowerCase() != "pari" && p_d.toLowerCase() != "dispari") {
+        p_d = prompt("scegli pari o dispari")
+    }
     const n_otf = prompt("scegli un numero da 1 a 5")
-
+    while (parseInt(n_otf) < 1 && parseInt(n_otf) > 5) {
+        p_d = prompt("scegli pari o dispari")
+    }
     function Random1to5() {
         let risultato = Math.floor(Math.random() * 5) + 1;
         return risultato;
